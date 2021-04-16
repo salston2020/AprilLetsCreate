@@ -22,7 +22,12 @@ class BookingViewController: UIViewController {
     @IBOutlet weak var actionLabel: UILabel!
     
     @IBAction func actionButtonPressed(_ sender: Any) {
+        
         addBooking()
+        
+
+        self.dismiss(animated: true, completion: nil)
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +49,18 @@ class BookingViewController: UIViewController {
         refBooking.child(key!).setValue(booking)
         actionLabel.text = "Event Added"
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  //  guard let key = ref.child("posts").childByAutoId().key else { return }
+ //   let post = ["uid": userID,
+    //            "author": username,
+   //             "title": title,
+   //             "body": body]
+  //  let childUpdates = ["/posts/\(key)": post,
+    //                    "/user-posts/\(userID)/\(key)/": post]
+   // ref.updateChildValues(childUpdates)
+    override func didReceiveMemoryWarning() {
+         super.didReceiveMemoryWarning()
+         // Dispose of any resources that can be recreated.
+     }
+    
     }
-    */
 
-}

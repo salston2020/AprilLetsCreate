@@ -8,30 +8,48 @@
 import UIKit
 import Firebase
 
+
+
+
+
 class Booking: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
 
     @IBOutlet weak var bookingtb: UITableView!
         
     var bookingList = [BookingModel]()
+    var myIndex = 0
+    var eventName : String = ""
+    var eventType : String = ""
+    var eventPrice : String = ""
+    
+    
+    
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        bookingList.count
+        return bookingList.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! bookingCellTableViewCell
         
         let booking: BookingModel
         
         booking = bookingList[indexPath.row]
         
-        cell.eventNameLabel.text = booking.eventName
-        cell.eventType.text = booking.eventType
-        cell.quoteTextLabel.text = booking.eventPrice
+        cell.eventNameLabel.text = eventName
+        cell.eventType.text = eventType
+        cell.quoteTextLabel.text = eventPrice
+        
+        self.eventName = booking.eventName
+        self.eventType = booking.eventType
+        self.eventPrice = booking.eventPrice
         
         return cell
     }
+    
+    
     
     var refBooking: DatabaseReference!
     
@@ -39,16 +57,19 @@ class Booking: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBAction func addNewBooking(_ sender: Any) {
-        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
             performSegue(withIdentifier: "addNewBooking", sender: indexPath.item)
         }    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bookingtb.delegate = self
+        bookingtb.dataSource = self
+                
         refBooking = Database.database().reference().child("Booking");
-        refBooking.observeSingleEvent(of: DataEventType.value, with:{(snapshot) in
+        refBooking.observeSingleEvent(of: DataEventType.value, with:{ (snapshot) in
             if snapshot.childrenCount>0{
-                self.bookingList.removeAll()
+              
                 
                 for booking in snapshot.children.allObjects as! [DataSnapshot] {
                     let bookingObject = booking.value as? [String: AnyObject]
@@ -57,28 +78,35 @@ class Booking: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     let eventPrice = bookingObject?["eventPrice"]
                     let eventID = bookingObject?["id"]
                 
-                    let booking = BookingModel(id: eventID as! String?, eventName: eventName as! String?, eventType: eventType as! String?, eventPrice: eventPrice as! String?)
+                    let booking = BookingModel(id: eventID as! UUID, eventName: eventName as! String, eventType: eventType as! String, eventPrice: eventPrice as! String)
                    
+                    
+                    
                     self.bookingList.append(booking)
             }
-                self.bookingtb.reloadData()
+                    self.bookingtb.reloadData()
+                
             }
-        })
+            
+            
         
        
         // Do any additional setup after loading the view.
-    }
+    })
+}
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  
+        myIndex = indexPath.row
+        
+   
+        
+        print("You tapped cell number \(indexPath.row).")
+        
+        performSegue(withIdentifier: "moredetails", sender: indexPath.item)
+       
     }
-    */
 
 }
 
+    

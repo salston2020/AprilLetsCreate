@@ -31,7 +31,7 @@
         <!--Chats-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ConversationsViewController" customModule="Easy_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConversationsViewController" customModule="Lets_Create" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
         <!--Profile-->
         <scene sceneID="GBI-bd-9e2">
             <objects>
-                <viewController id="wPQ-Dg-HZ9" customClass="ProfileViewController" customModule="Easy_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wPQ-Dg-HZ9" customClass="ProfileViewController" customModule="Lets_Create" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xsa-GI-8i7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +112,7 @@
         <!--Booking View Controller-->
         <scene sceneID="urz-Cl-7fX">
             <objects>
-                <viewController storyboardIdentifier="newBookingVC" id="NZ6-Ik-hYm" customClass="BookingViewController" customModule="Easy_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newBookingVC" id="NZ6-Ik-hYm" customClass="BookingViewController" customModule="Lets_Create" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zT9-vA-8Q7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,10 +168,69 @@
             </objects>
             <point key="canvasLocation" x="786.95652173913049" y="1123.6607142857142"/>
         </scene>
+        <!--More Detailed Booking View Controller-->
+        <scene sceneID="I9h-Al-b9t">
+            <objects>
+                <viewController id="BVl-lW-5b3" customClass="MoreDetailedBookingViewController" customModule="Lets_Create" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uVw-Xq-VEi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yya-go-5mI">
+                                <rect key="frame" x="160" y="348" width="200" height="210"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htj-zd-ioX">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Z9i-MP-jq2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfU-b4-UEz">
+                                        <rect key="frame" x="0.0" y="70" width="200" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="aLN-t5-xje"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLF-53-tvK">
+                                        <rect key="frame" x="0.0" y="140" width="200" height="70"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="qzm-3c-XK0"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E8G-mD-5Wg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yya-go-5mI" firstAttribute="top" secondItem="E8G-mD-5Wg" secondAttribute="top" constant="208" id="Vw9-5r-fHp"/>
+                            <constraint firstItem="yya-go-5mI" firstAttribute="leading" secondItem="E8G-mD-5Wg" secondAttribute="leading" constant="160" id="whw-Bm-ioj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9n9-AA-S8u"/>
+                    <connections>
+                        <outlet property="eventNameLabel" destination="Htj-zd-ioX" id="h3w-vl-1qA"/>
+                        <outlet property="eventTypeLabel" destination="tfU-b4-UEz" id="wxM-Ui-jEB"/>
+                        <outlet property="priceLabel" destination="RLF-53-tvK" id="NUv-aQ-MmQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4U-yy-cBe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786.95652173913049" y="1826.7857142857142"/>
+        </scene>
         <!--Event Details View Controller-->
         <scene sceneID="XO3-ji-T9S">
             <objects>
-                <viewController id="Pnu-Be-GQS" customClass="EventDetailsViewController" customModule="Easy_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Pnu-Be-GQS" customClass="EventDetailsViewController" customModule="Lets_Create" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kaD-h5-6pM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,7 +368,7 @@
         <!--Booking-->
         <scene sceneID="8gW-js-WYD">
             <objects>
-                <viewController id="zS3-8t-IQC" customClass="Booking" customModule="Easy_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zS3-8t-IQC" customClass="Booking" customModule="Lets_Create" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l5O-C1-xfx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -318,7 +377,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="5" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="136" id="r5v-RP-rFn" customClass="bookingCellTableViewCell" customModule="Easy_Chat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="5" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="136" id="r5v-RP-rFn" customClass="bookingCellTableViewCell" customModule="Lets_Create" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r5v-RP-rFn" id="prt-jX-44x">
@@ -373,7 +432,6 @@
                                 <connections>
                                     <outlet property="dataSource" destination="zS3-8t-IQC" id="eUR-FQ-FwP"/>
                                     <outlet property="delegate" destination="zS3-8t-IQC" id="5SO-2q-yOk"/>
-                                    <outlet property="prefetchDataSource" destination="zS3-8t-IQC" id="H4l-wn-am5"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -408,6 +466,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bookingtb" destination="442-fi-wdn" id="vGc-N3-ZLv"/>
+                        <segue destination="BVl-lW-5b3" kind="show" identifier="moredetails" id="NPE-ij-J6y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqF-wb-DVK" sceneMemberID="firstResponder"/>
