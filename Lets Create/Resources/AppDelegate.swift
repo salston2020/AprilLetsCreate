@@ -12,16 +12,13 @@ import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    var refBooking: DatabaseReference!
-    
+
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
 
         FirebaseApp.configure()
-        refBooking = Database.database().reference()
         
         ApplicationDelegate.shared.application(
             application,
@@ -31,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = self
 
-        
-        
         return true
     }
 
