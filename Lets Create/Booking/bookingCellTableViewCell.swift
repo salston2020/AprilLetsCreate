@@ -13,7 +13,10 @@ class bookingCellTableViewCell: UITableViewCell {
     @IBOutlet weak var eventType: UILabel!
     @IBOutlet weak var quoteTextLabel: UILabel!
     
+    @IBOutlet weak var eventDate: UILabel!
     
+  
+    @IBOutlet weak var zipCellLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
